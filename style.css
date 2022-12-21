@@ -1,0 +1,59 @@
+* {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body {
+  background-image: url('https://media.tenor.com/fdc85JgfA64AAAAC/traumacore-scary.gif');
+  background-size: 95%;
+  align-self: center;  
+  height: 80vh;
+  padding: 5px;
+  margin: 5px;
+}
+
+.ghost {
+visibility: hidden;
+opacity: 0.0;
+display: none;
+position: absolute;
+left: -999999px;
+
+}
+
+#button1 {
+  background: transparent;
+  font-size: 10px;
+  color: transparent;
+  position:fixed;
+  bottom:20px;
+  right: 934px;
+  border-width: 9px ;
+  border-top-width: 50px;
+  border-bottom-width: 50px;
+  border-color: transparent;
+
+  
+}
+
+#button2 {
+  background: transparent;
+  font-size: 10px;
+  color: transparent;
+  border-color: transparent;
+  position: fixed; 
+  top: 140px;
+  right: 860px;
+  border-radius: 360%;
+  border-width: 20px;
+
+
+  
+}
+
+#hide {
+  display: none;
+}

@@ -1,0 +1,30 @@
+
+body {
+    background-image: url('https://wallpaperforu.com/wp-content/uploads/2022/08/Dream-Core-Wallpaper-For-Ipad.jpg');
+    background-size: cover ;
+}
+*:hover {
+    border-color: blue;
+    float: right;
+}
+
+img {
+ size: 200%;
+}
+
+p {
+    font-size: large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: blue;
+}
+p:hover {
+    font-size: larger;
+    color: burlywood;
+}
+
+.Layout_demon__3y__S {
+    width: 10%;
+    -webkit-animation: Layout_blink__2uqPY 2s;
+    animation: Layout_blink__2uqPY 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
