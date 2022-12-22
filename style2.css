@@ -1,30 +1,44 @@
+@import "compass/css3";
 
 body {
-    background-image: url('https://wallpaperforu.com/wp-content/uploads/2022/08/Dream-Core-Wallpaper-For-Ipad.jpg');
+    background-image: url('https://64.media.tumblr.com/9b7f13a07b93cb7629158c5e733e203b/fffe52baffa9c622-6b/s2048x3072/4f1f38ad17495329ef45b5da03db609e6c7e28a6.gif');
     background-size: cover ;
 }
-*:hover {
-    border-color: blue;
-    float: right;
-}
 
-img {
- size: 200%;
-}
 
+a {
+    text-align: center;
+    color: aliceblue;
+    font-family: Verdana;
+
+}
+a:visited {
+    color: magenta;
+    
+}
 p {
     font-size: large;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: blue;
-}
-p:hover {
-    font-size: larger;
-    color: burlywood;
+    color: rgb(101, 101, 159);
 }
 
-.Layout_demon__3y__S {
-    width: 10%;
-    -webkit-animation: Layout_blink__2uqPY 2s;
-    animation: Layout_blink__2uqPY 2s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
+
+li {
+    text-decoration: none;
+    color: aqua;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.as {
+    font-weight: 4000;
+    font-family: fantasy;
+    text-align: center;
+    color: beige;
+}
+
+.left {
+    
+    float: right;
+    z-index: 10660;
+}
