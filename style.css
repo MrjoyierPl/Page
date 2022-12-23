@@ -57,3 +57,12 @@ left: -999999px;
 #hide {
   display: none;
 }
+
+label {
+  
+  bottom: 1px;
+  color: white
+}
+input {
+  left: 100px;
+}

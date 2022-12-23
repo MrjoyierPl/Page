@@ -10,3 +10,11 @@ function playMusic(){
     var music = new Audio('weird.mp3');
     music.play();
     }
+
+    function passcode() {
+        var x = document.getElementById("password");
+        if (x = "azur") {
+            window.open("amatakam.html"); 
+        }
+        
+    }
