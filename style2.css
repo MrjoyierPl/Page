@@ -1,7 +1,7 @@
 @import "compass/css3";
 
 body {
-    background-image: url('https://64.media.tumblr.com/9b7f13a07b93cb7629158c5e733e203b/fffe52baffa9c622-6b/s2048x3072/4f1f38ad17495329ef45b5da03db609e6c7e28a6.gif');
+    background-image: url('https://64.media.tumblr.com/1e1c218988fa2106b44a5d6e16921fc4/441f2027138854ca-f1/s400x600/9094e541beef0da52832c74009eabf705edb190c.gifv');
     background-size: cover ;
 }
 
@@ -13,13 +13,20 @@ a {
 
 }
 a:visited {
-    color: magenta;
+    color: rgb(255, 255, 255);
     
+}
+img {
+    padding: 50px;
+    margin: 25px;
+    position: relative;
+    height: 300px;
+    width: 400px;
 }
 p {
     font-size: large;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(101, 101, 159);
+    color: rgb(255, 255, 255);
 }
 
 
@@ -39,6 +46,9 @@ li {
 
 .left {
     
-    float: right;
+    float: left;
     z-index: 10660;
+}
+.right {
+    float: right;
 }

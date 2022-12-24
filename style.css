@@ -58,11 +58,11 @@ left: -999999px;
   display: none;
 }
 
-label {
-  
-  bottom: 1px;
-  color: white
-}
-input {
-  left: 100px;
+#button3 {
+  background-color: blanchedalmond  ;
+  color: transparent;
+  border: transparent;
+  width: 50px;
+  height: 50px;
+
 }
