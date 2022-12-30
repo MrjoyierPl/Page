@@ -1,3 +1,15 @@
+* {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      align-items: center;
+      text-align: center
+      
+  }
+
 @import "compass/css3";
 
 body {
@@ -44,11 +56,6 @@ li {
     color: beige;
 }
 
-.left {
-    
+div {
     float: left;
-    z-index: 10660;
-}
-.right {
-    float: right;
 }
