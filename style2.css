@@ -11,31 +11,41 @@
   }
 
 @import "compass/css3";
-
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
 body {
     background-image: url('https://64.media.tumblr.com/1e1c218988fa2106b44a5d6e16921fc4/441f2027138854ca-f1/s400x600/9094e541beef0da52832c74009eabf705edb190c.gifv');
-    background-size: cover ;
+    background-size: contain ;
 }
 
 
 a {
+    
     text-align: center;
     color: aliceblue;
     font-family: Verdana;
+    
 
 }
-a:visited {
-    color: rgb(255, 255, 255);
+.zurson:hover {
+    color: black;
+    width: 200px;
+    height: 100px;
+    border-radius:45%;
+    background-color: #fff;
+    box-shadow: 2px 0 60px 30px #fff, 0 0 100px 60px #a30300, 0 0 140px 90px #ff00d4;
+  }
     
 }
 img {
+    
     padding: 50px;
     margin: 25px;
     position: relative;
-    height: 300px;
+    height: 400px;
     width: 400px;
 }
 p {
+    
     font-size: large;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(255, 255, 255);
@@ -44,18 +54,26 @@ p {
 
 li {
     text-decoration: none;
-    color: aqua;
+    color: aliceblue;
     text-transform: capitalize;
     text-align: center;
 }
+.glitch {
+    color: aliceblue;
+    font-size: 55px;
 
-.as {
-    font-weight: 4000;
-    font-family: fantasy;
-    text-align: center;
-    color: beige;
 }
+
+marquee {
+    width: 100%;
+    direction: down;
+    height: 100px;
+}
+
 
 div {
     float: left;
 }
+
+
+
