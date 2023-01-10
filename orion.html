@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orion Star</title>
+</head>
+<header style="position:fixed; top: 10px; font-family: 'Courier New', Courier, monospace; font-size: 30px; text-decoration: wavy; ">
+    <h1 style="text-align: center; color: aliceblue; text-decoration: wavy;">WEGYdLzgxWM=</h1>
+</header>
+<body>
+    <div id="container">
+        <div id="shape" class="cube">
+            <div class="plane a"></div>
+            <div class="plane b"></div>
+            <div class="plane c"></div>
+            <div class="plane d"></div>
+            <div class="plane e"></div>
+            <div class="plane f"></div>
+            <div class="plane one"></div>
+            <div class="plane two"></div>
+            <div class="plane three"></div>
+            <div class="plane four"></div>
+            <div class="plane five"></div>
+            <div class="plane six"></div>
+            <div class="plane seven"></div>
+            <div class="plane eight"></div>
+            <div class="plane nine"></div>
+            <div class="plane ten"></div>
+            <div class="plane eleven"></div>
+            <div class="plane twelve"></div>
+            <div class="plane thirteen"></div>
+            <div class="plane thirteen"></div>
+            <div class="plane fourteen"></div>
+            <div class="plane fifteen"></div>
+            <div class="plane sixteen"></div>
+            <div class="plane seventeen"></div>
+            <div class="plane eighteen"></div>
+
+            <style>
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	font-family: "Lucida Grande", Verdana, Arial;
+	font-size: 12px;
+	background-color: black;
+	position: relative;
+}
+
+#container {
+	display: grid;
+	place-items: center;
+	width: 100%;
+	height: 200px;
+	perspective: 800px;
+	perspective-origin: 50% 35%;
+	transform-style: preserve-3d;
+	/* border: 1px solid white; */
+}
+
+#shape {
+	position: relative;
+	margin: 0 auto;
+	height: 200px;
+	width: 200px;
+	transform: rotateX(70deg) rotateY(-25deg);
+	transform-style: preserve-3d;
+}
+
+.plane {
+	display: grid;
+	place-items: center;
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	border: 1px solid #ff4500;
+	/* outline: 2px solid #ff4500;
+	outline-offset: 15px; */
+	box-sizing: border-box;
+	font-family: Times, serif;
+	font-size: 50pt;
+	line-height: 1;
+	text-align: center;
+	transition: 2s, opacity 4s;
+	backface-visibility: visible;
+}
+
+/* ---------- cube styles ------------- */
+.a,
+.b,
+.c,
+.d,
+.e,
+.f {
+	background: linear-gradient(
+		to bottom right,
+		rgba(255 255 255 / 0.7),
+		rgba(255 255 255 / 0.5),
+		rgba(255 255 255 / 0.7)
+	);
+}
+.one,
+.two,
+.three,
+.four,
+.five,
+.six {
+	background: linear-gradient(
+		to bottom right,
+		rgba(255 0 255 / 0.8),
+		rgba(0 255 255 / 0.4),
+		rgba(255 255 0 / 0.8)
+	);
+}
+.seven,
+.eight,
+.nine,
+.ten,
+.eleven,
+.twelve {
+	background: rgba(0 255 255 / 1);
+}
+.thirteen,
+.fourteen,
+.fifteen,
+.sixteen,
+.seventeen,
+.eighteen {
+	background: rgba(255 255 0 / 1);
+}
+
+/* outer cube */
+.cube > .a {
+	opacity: 0.5;
+	color: purple;
+	transform: scale3d(1.6, 1.6, 1.6) rotateX(90deg) translateZ(100px);
+}
+.cube > .b {
+	opacity: 0.5;
+	color: purple;
+	transform: scale3d(1.6, 1.6, 1.6) translateZ(100px);
+}
+.cube > .c {
+	opacity: 0.5;
+	color: purple;
+	transform: scale3d(1.6, 1.6, 1.6) rotateY(90deg) translateZ(100px);
+}
+.cube > .d {
+	opacity: 0.5;
+	color: purple;
+	transform: scale3d(1.6, 1.6, 1.6) rotateY(180deg) translateZ(100px);
+}
+.cube > .e {
+	opacity: 0.5;
+	color: purple;
+	transform: scale3d(1.6, 1.6, 1.6) rotateY(-90deg) translateZ(100px);
+}
+.cube > .f {
+	opacity: 0.5;
+	color: purple;
+	transform: scale3d(1.6, 1.6, 1.6) rotateX(-90deg) translateZ(100px);
+}
+
+/* first inner cube */
+.cube > .one {
+	opacity: 0.5;
+	color: purple;
+	transform: scale3d(1.2, 1.2, 1.2) rotateX(90deg) translateZ(100px);
+}
+.cube > .two {
+	opacity: 0.5;
+	color: purple;
+	transform: scale3d(1.2, 1.2, 1.2) translateZ(100px);
+}
+.cube > .three {
+	opacity: 0.5;
+	color: purple;
+	transform: scale3d(1.2, 1.2, 1.2) rotateY(90deg) translateZ(100px);
+}
+.cube > .four {
+	opacity: 0.5;
+	color: purple;
+	transform: scale3d(1.2, 1.2, 1.2) rotateY(180deg) translateZ(100px);
+}
+.cube > .five {
+	opacity: 0.5;
+	color: purple;
+	transform: scale3d(1.2, 1.2, 1.2) rotateY(-90deg) translateZ(100px);
+}
+.cube > .six {
+	opacity: 0.5;
+	color: purple;
+	transform: scale3d(1.2, 1.2, 1.2) rotateX(-90deg) translateZ(100px)
+		rotate(180deg);
+}
+
+/* second inner cube */
+.cube > .seven {
+	opacity: 0.65;
+	color: rebeccapurple;
+	transform: scale3d(0.8, 0.8, 0.8) rotateX(90deg) translateZ(100px) rotate(0);
+}
+.cube > .eight {
+	opacity: 0.65;
+	color: rebeccapurple;
+	transform: scale3d(0.8, 0.8, 0.8) translateZ(100px);
+}
+.cube > .nine {
+	opacity: 0.65;
+	color: rebeccapurple;
+	transform: scale3d(0.8, 0.8, 0.8) rotateY(90deg) translateZ(100px);
+}
+.cube > .ten {
+	opacity: 0.65;
+	color: rebeccapurple;
+	transform: scale3d(0.8, 0.8, 0.8) rotateY(180deg) translateZ(100px);
+}
+.cube > .eleven {
+	opacity: 0.65;
+	color: rebeccapurple;
+	transform: scale3d(0.8, 0.8, 0.8) rotateY(-90deg) translateZ(100px);
+}
+.cube > .twelve {
+	opacity: 0.65;
+	color: rebeccapurple;
+	transform: scale3d(0.8, 0.8, 0.8) rotateX(-90deg) translateZ(100px);
+}
+
+/* inner inner cube */
+.cube > .thirteen {
+	opacity: 1;
+	color: black;
+	transform: scale3d(0.4, 0.4, 0.4) rotateX(90deg) translateZ(100px);
+}
+.cube > .fourteen {
+	opacity: 1;
+	color: black;
+	transform: scale3d(0.4, 0.4, 0.4) translateZ(100px);
+}
+.cube > .fifteen {
+	opacity: 1;
+	color: black;
+	transform: scale3d(0.4, 0.4, 0.4) rotateY(90deg) translateZ(100px);
+}
+.cube > .sixteen {
+	opacity: 1;
+	color: black;
+	transform: scale3d(0.4, 0.4, 0.4) rotateY(180deg) translateZ(100px);
+}
+.cube > .seventeen {
+	opacity: 1;
+	color: black;
+	transform: scale3d(0.4, 0.4, 0.4) rotateY(-90deg) translateZ(100px);
+}
+.cube > .eighteen {
+	opacity: 1;
+	color: black;
+	transform: scale3d(0.4, 0.4, 0.4) rotateX(-90deg) translateZ(100px);
+}
+
+/* === the animation === */
+#shape {
+	animation: spin 35s infinite ease forwards;
+}
+@keyframes spin {
+	0%,
+	100% {
+		transform: rotateX(70deg) rotateY(0);
+	}
+	50% {
+		transform: rotateX(-50deg) rotateY(-160deg);
+	}
+}
+/* .plane {
+	animation: plane 25s infinite ease forwards;
+} */
+@keyframes plane {
+	0%,
+	100% {
+		width: 200px;
+		height: 200px;
+	}
+	50% {
+		width: 150px;
+		height: 150px;
+	}
+}
+
+#shape:hover {
+	animation-play-state: paused;
+	cursor: grab;
+}
+/* === end animation === */
+
+            </style>
+        </div>
+    </div>
+</body>
+</html>
