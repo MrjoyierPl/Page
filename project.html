@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Gallery</title>
+  <style>
+    /* Global styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    /* Header styles */
+    header, a {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+    /* Gallery styles */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 20px;
+      margin: 20px;
+    }
+    .project {
+      background-color: white;
+      border: 1px solid #ddd;
+      overflow: hidden;
+      position: relative;
+    }
+    .project img {
+      max-width: 100%;
+      height: auto;
+    }
+    .project .overlay {
+      background-color: rgba(105, 56, 56, 0.6);
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      left: 0;
+      opacity: 0;
+      padding: 20px;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      transition: opacity 0.3s ease-in-out;
+      width: 100%;
+      z-index: 1;
+    }
+    .project:hover .overlay {
+      opacity: 1;
+    }
+    .project .overlay:hover {
+      cursor: pointer;
+    }
+    /* Animation styles */
+    @keyframes slideUp {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0%);
+      }
+    }
+    .project:nth-child(odd) .overlay {
+      animation: slideUp 0.5s ease-in-out forwards;
+    }
+    .project:nth-child(even) .overlay {
+      animation: slideUp 0.5s ease-in-out forwards 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Galeria Projektów </h1>
+  </header>
+  <div class="gallery">
+
+    <div class="project">
+        <a href="Page/main.html">Projekt Hotel</a>
+    </div>
+
+    
+ </div>
