@@ -1,20 +1,605 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dᒷ↸ᓭᒷᓵ</title>
-    <link rel="stylesheet" href="Quotes.css">
-    <script src="Quotes.js"></script>
-</head>
-<body>
-   
-        <a href="App.html" target="_blank"><img src="https://thumbs.gfycat.com/ApprehensiveOddballAgama-max-1mb.gif"></a>
-        
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quotes</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                background-color: black;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            #quote {
+                color: white;
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            #author {
+                color: aliceblue;
+                font-style: italic;
+            }
+            #new-quote-btn {
+                background-color: #a70000;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+                border-radius: 5px;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="quote">Click the button below to generate a random quote.</div>
+            <div id="author"></div>
+            <button id="new-quote-btn">New Quote</button>
+        </div>
 
-        <p id="demo"></p>
-   
+        <script>
+            const quotes = [
+        // ... (existing quotes)
+        {
+            text: "The only way to do great work is to love what you do.",
+            author: "Steve Jobs"
+        },
+        {
+            text: "The future depends on what you do today.",
+            author: "Mahatma Gandhi"
+        },
+        {
+            text: "Believe you can and you're halfway there.",
+            author: "Theodore Roosevelt"
+        },
+        {
+            text: "In three words I can sum up everything I've learned about life: it goes on.",
+            author: "Robert Frost"
+        },
+        {
+            text: "Success is walking from failure to failure with no loss of enthusiasm.",
+            author: "Winston Churchill"
+        },
+        {
+            text: "The only thing we have to fear is fear itself.",
+            author: "Franklin D. Roosevelt"
+        },
+        {
+            text: "Life is really simple, but we insist on making it complicated.",
+            author: "Confucius"
+        },
+        {
+            text: "The best time to plant a tree was 20 years ago. The second best time is now.",
+            author: "Chinese Proverb"
+        },
+        {
+            text: "You miss 100% of the shots you don't take.",
+            author: "Wayne Gretzky"
+        },
+        {
+            text: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+            author: "Ralph Waldo Emerson"
+        },
+        {
+            text: "Don't cry because it's over, smile because it happened.",
+            author: "Dr. Seuss"
+        },
+        {
+            text: "The only person you are destined to become is the person you decide to be.",
+            author: "Ralph Waldo Emerson"
+        },
+        {
+            text: "Life is 10% what happens to us and 90% how we react to it.",
+            author: "Charles R. Swindoll"
+        },
+        {
+            text: "The secret of getting ahead is getting started.",
+            author: "Mark Twain"
+        },
+        {
+            text: "You can't go back and change the beginning, but you can start where you are and change the ending.",
+            author: "C.S. Lewis"
+        },
+        {
+            text: "The only true wisdom is in knowing you know nothing.",
+            author: "Socrates"
+        },
+        {
+            text: "The best revenge is massive success.",
+            author: "Frank Sinatra"
+        },
+        {
+            text: "Happiness is not something readymade. It comes from your own actions.",
+            author: "Dalai Lama"
+        },
+        {
+            text: "If you don't stand for something, you will fall for anything.",
+            author: "Malcolm X"
+        },
+        {
+            text: "The biggest risk is not taking any risk. In a world that is changing quickly, the only strategy that is guaranteed to fail is not taking risks.",
+            author: "Mark Zuckerberg"
+        },
+        {
+            text: "It always seems impossible until it's done.",
+            author: "Nelson Mandela"
+        },
+        {
+            text: "I have not failed. I've just found 10,000 ways that won't work.",
+            author: "Thomas Edison"
+        },
+        {
+            text: "The only thing standing between you and your dream is the will to try and the belief that it is actually possible.",
+            author: "Joel Brown"
+        },
+        {
+            text: "The only time to not follow your heart is when it's leading you off a cliff.",
+            author: "Kris De Leon"
+        },
+        {
+            text: "Your time is limited, don't waste it living someone else's life.",
+            author: "Steve Jobs"
+        },
+        {
+            text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+            author: "Nelson Mandela"
+        },
+        {
+            text: "Life is short, and it's up to you to make it sweet.",
+            author: "Sarah Louise Delany"
+        },
+        {
+            text: "It does not matter how slowly you go as long as you do not stop.",
+            author: "Confucius"
+        },
+        {
+            text: "A person who never made a mistake never tried anything new.",
+            author: "Albert Einstein"
+        },
+        {
+            text: "The only limit to our realization of tomorrow will be our doubts of today.",
+            author: "Franklin D. Roosevelt"
+        },
+        {
+            text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+            author: "Nelson Mandela"
+        },
+        {
+            text: "Don't count the days, make the days count.",
+            author: "Muhammad Ali"
+        },
+        {
+            text: "You are never too old to set another goal or to dream a new dream.",
+            author: "C.S. Lewis"
+        },
+        {
+            text: "The mind is everything. What you think you become.",
+            author: "Buddha"
+        },
+        {
+            text: "The only way to do great work is to love what you do.",
+            author: "Steve Jobs"
+        },
+        {
+            text: "Believe you can and you're halfway there.",
+            author: "Theodore Roosevelt"
+        },
+        {
+            text: "You don't have to be rich to travel well.",
+            author: "Eugene Fodor"
+        },
+        {
+            text: "Don't watch the clock; do what it does. Keep going.",
+            author: "Sam Levenson"
+        },
+        {
+            text: "Be yourself; everyone else is already taken.",
+            author: "Oscar Wilde"
+        },
+        {
+            text: "Life is not about waiting for the storm to pass, but about learning to dance in the rain.",
+            author: "Vivian Greene"
+        },
+        {
+            text: "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do.",
+            author: "Mark Twain"
+        },
+        {
+            text: "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.",
+            author: "Buddha"
+        },
+        {
+            text: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.",
+            author: "Albert Schweitzer"
+        },
+        {
+            text: "The only thing standing between you and your dream is the will to try and the belief that it is actually possible.",
+            author: "Joel Brown"
+        },
+        {
+            text: "The only time to not follow your heart is when it's leading you off a cliff.",
+            author: "Kris De Leon"
+        },
+        {
+            text: "Your time is limited, don't waste it living someone else's life.",
+            author: "Steve Jobs"
+        },
+        {
+            text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+            author: "Nelson Mandela"
+        },
+        {
+            text: "Life is short, and it's up to you to make it sweet.",
+            author: "Sarah Louise Delany"
+        },
+        {
+            text: "It does not matter how slowly you go as long as you do not stop.",
+            author: "Confucius"
+        },
+        {
+            text: "A person who never made a mistake never tried anything new.",
+            author: "Albert Einstein"
+        },
+        {
+            text: "The only limit to our realization of tomorrow will be our doubts of today.",
+            author: "Franklin D. Roosevelt"
+        },
+        {
+            text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+            author: "Nelson Mandela"
+        },
+        {
+            text: "Don't count the days, make the days count.",
+            author: "Muhammad Ali"
+        },
+        {
+            text: "You are never too old to set another goal or to dream a new dream.",
+            author: "C.S. Lewis"
+        },
+        {
+            text: "The mind is everything. What you think you become.",
+            author: "Buddha"
+        },
+        {
+            text: "The only way to do great work is to love what you do.",
+            author: "Steve Jobs"
+        },
+        {
+            text: "Believe you can and you're halfway there.",
+            author: "Theodore Roosevelt"
+        },
+        {
+            text: "You don't have to be rich to travel well.",
+            author: "Eugene Fodor"
+        },
+        {
+            text: "Don't watch the clock; do what it does. Keep going.",
+            author: "Sam Levenson"
+        },
+        {
+            text: "Be yourself; everyone else is already taken.",
+            author: "Oscar Wilde"
+        },
+        {
+            text: "Life is not about waiting for the storm to pass, but about learning to dance in the rain.",
+            author: "Vivian Greene"
+        },
+        {
+            text: "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do.",
+            author: "Mark Twain"
+        },
+        {
+            text: "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.",
+            author: "Buddha"
+        },
+        {
+            text: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.",
+            author: "Albert Schweitzer"
+        },
+        {
+            text: "Life is 10% what happens to us and 90% how we react to it.",
+            author: "Charles R. Swindoll"
+        },
+        {
+            text: "The secret of getting ahead is getting started.",
+            author: "Mark Twain"
+        },
+        {
+            text: "You can't go back and change the beginning, but you can start where you are and change the ending.",
+            author: "C.S. Lewis"
+        },
+        {
+            text: "The only true wisdom is in knowing you know nothing.",
+            author: "Socrates"
+        },
+        {
+            text: "The best revenge is massive success.",
+            author: "Frank Sinatra"
+        },
+        {
+            text: "Happiness is not something readymade. It comes from your own actions.",
+            author: "Dalai Lama"
+        },
+        {
+            text: "If you don't stand for something, you will fall for anything.",
+            author: "Malcolm X"
+        },
+        {
+            text: "The biggest risk is not taking any risk. In a world that is changing quickly, the only strategy that is guaranteed to fail is not taking risks.",
+            author: "Mark Zuckerberg"
+        },
+        {
+            text: "It always seems impossible until it's done.",
+            author: "Nelson Mandela"
+        },
+        {
+            text: "I have not failed. I've just found 10,000 ways that won't work.",
+            author: "Thomas Edison"
+        },
+        {
+            text: "The only thing standing between you and your dream is the will to try and the belief that it is actually possible.",
+            author: "Joel Brown"
+        },
+        {
+            text: "The only time to not follow your heart is when it's leading you off a cliff.",
+            author: "Kris De Leon"
+        },
+        {
+            text: "Your time is limited, don't waste it living someone else's life.",
+            author: "Steve Jobs"
+        },
+        {
+            text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+            author: "Nelson Mandela"
+        },
+        {
+            text: "Life is short, and it's up to you to make it sweet.",
+            author: "Sarah Louise Delany"
+        },
+        {
+            text: "It does not matter how slowly you go as long as you do not stop.",
+            author: "Confucius"
+        },
+        {
+            text: "A person who never made a mistake never tried anything new.",
+            author: "Albert Einstein"
+        },
+        {
+            text: "The only limit to our realization of tomorrow will be our doubts of today.",
+            author: "Franklin D. Roosevelt"
+        },
+        {
+            text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+            author: "Nelson Mandela"
+        },
+        {
+            text: "Don't count the days, make the days count.",
+            author: "Muhammad Ali"
+        },
+        {
+            text: "You are never too old to set another goal or to dream a new dream.",
+            author: "C.S. Lewis"
+        },
+        {
+            text: "The mind is everything. What you think you become.",
+            author: "Buddha"
+        },
+        {
+            text: "The only way to do great work is to love what you do.",
+            author: "Steve Jobs"
+        },
+        {
+            text: "Believe you can and you're halfway there.",
+            author: "Theodore Roosevelt"
+        },
+        {
+            text: "You don't have to be rich to travel well.",
+            author: "Eugene Fodor"
+        },
+        {
+            text: "Don't watch the clock; do what it does. Keep going.",
+            author: "Sam Levenson"
+        },
+        {
+            text: "Be yourself; everyone else is already taken.",
+            author: "Oscar Wilde"
+        },
+        {
+            text: "Life is not about waiting for the storm to pass, but about learning to dance in the rain.",
+            author: "Vivian Greene"
+        },
+        {
+            text: "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do.",
+            author: "Mark Twain"
+        },
+        {
+            text: "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.",
+            author: "Buddha"
+        },
+        {
+            text: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.",
+            author: "Albert Schweitzer"
+        },
+        {
+            text: "Life is 10% what happens to us and 90% how we react to it.",
+            author: "Charles R. Swindoll"
+        },
+        {
+            text: "The secret of getting ahead is getting started.",
+            author: "Mark Twain"
+        },
+        {
+            text: "You can't go back and change the beginning, but you can start where you are and change the ending.",
+            author: "C.S. Lewis"
+        },
+        {
+            text: "The only true wisdom is in knowing you know nothing.",
+            author: "Socrates"
+        },
+        {
+            text: "The best revenge is massive success.",
+            author: "Frank Sinatra"
+        },
+        {
+            text: "Happiness is not something readymade. It comes from your own actions.",
+            author: "Dalai Lama"
+        },
+        {
+            text: "If you don't stand for something, you will fall for anything.",
+            author: "Malcolm X"
+        },
+        {
+            text: "The biggest risk is not taking any risk. In a world that is changing quickly, the only strategy that is guaranteed to fail is not taking risks.",
+            author: "Mark Zuckerberg"
+        },
+        {
+            text: "It always seems impossible until it's done.",
+            author: "Nelson Mandela"
+        },
+        {
+            text: "I have not failed. I've just found 10,000 ways that won't work.",
+            author: "Thomas Edison"
+        },
+        {
+            text: "The only thing standing between you and your dream is the will to try and the belief that it is actually possible.",
+            author: "Joel Brown"
+        },
+        {
+            text: "The only time to not follow your heart is when it's leading you off a cliff.",
+            author: "Kris De Leon"
+        },
+        {
+            text: "Your time is limited, don't waste it living someone else's life.",
+            author: "Steve Jobs"
+        },
+        {
+            text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+            author: "Nelson Mandela"
+        },
+        {
+            text: "Life is short, and it's up to you to make it sweet.",
+            author: "Sarah Louise Delany"
+        },
+        {
+            text: "It does not matter how slowly you go as long as you do not stop.",
+            author: "Confucius"
+        },
+        {
+            text: "A person who never made a mistake never tried anything new.",
+            author: "Albert Einstein"
+        },
+        {
+            text: "The only limit to our realization of tomorrow will be our doubts of today.",
+            author: "Franklin D. Roosevelt"
+        },
+        {
+            text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+            author: "Nelson Mandela"
+        },
+        {
+            text: "Don't count the days, make the days count.",
+            author: "Muhammad Ali"
+        },
+        {
+            text: "You are never too old to set another goal or to dream a new dream.",
+            author: "C.S. Lewis"
+        },
+        {
+            text: "The mind is everything. What you think you become.",
+            author: "Buddha"
+        },
+        {
+            text: "The only way to do great work is to love what you do.",
+            author: "Steve Jobs"
+        },
+        {
+            text: "Believe you can and you're halfway there.",
+            author: "Theodore Roosevelt"
+        },
+        {
+            text: "You don't have to be rich to travel well.",
+            author: "Eugene Fodor"
+        },
+        {
+            text: "Don't watch the clock; do what it does. Keep going.",
+            author: "Sam Levenson"
+        },
+        {
+            text: "Be yourself; everyone else is already taken.",
+            author: "Oscar Wilde"
+        },
+        {
+            text: "Life is not about waiting for the storm to pass, but about learning to dance in the rain.",
+            author: "Vivian Greene"
+        },
+        {
+            text: "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do.",
+            author: "Mark Twain"
+        },
+        {
+        text: "ℸ ̣ ⍑ᒷ∷ᒷ'ᓭ リ𝙹 ꖎ╎⊣⍑ℸ ̣  ∴╎ℸ ̣ ⍑𝙹⚍ℸ ̣  ↸ᔑ∷ꖌリᒷᓭᓭ",
+        author: "Your fellow dev"
+    }
+                
+            ];
 
-</body>
-</html>
+            const quoteElement = document.getElementById("quote");
+const authorElement = document.getElementById("author");
+const newQuoteButton = document.getElementById("new-quote-btn");
+
+newQuoteButton.addEventListener("click", generateRandomQuote);
+
+const lastQuotesQueue = [];
+const lastAuthorsQueue = [];
+
+function generateRandomQuote() {
+    let randomIndex;
+    let randomAuthorIndex;
+
+    do {
+        randomIndex = Math.floor(Math.random() * quotes.length);
+    } while (lastQuotesQueue.includes(randomIndex));
+    
+    lastQuotesQueue.push(randomIndex);
+    if (lastQuotesQueue.length > 5) {
+        lastQuotesQueue.shift();
+    }
+
+    do {
+        randomAuthorIndex = Math.floor(Math.random() * quotes.length);
+    } while (lastAuthorsQueue.includes(randomAuthorIndex) || randomAuthorIndex === randomIndex);
+    
+    lastAuthorsQueue.push(randomAuthorIndex);
+    if (lastAuthorsQueue.length > 5) {
+        lastAuthorsQueue.shift();
+    }
+
+    const randomQuote = quotes[randomIndex];
+    const randomAuthor = quotes[randomAuthorIndex].author;
+    
+    quoteElement.textContent = randomQuote.text;
+    authorElement.textContent = "- " + randomAuthor;
+    
+    // Show the secret quote with 1/10 chance
+    if (Math.random() < 0.1) {
+        const secretQuote = quotes.find(quote => quote.author === "Your fellow dev");
+        quoteElement.textContent = secretQuote.text;
+        authorElement.textContent = "- " + secretQuote.author;
+    }
+}
+
+// Initial quote generation
+generateRandomQuote();
+        </script>
+    </body>
+    </html>

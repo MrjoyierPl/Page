@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clickable Pictures Game</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: black;
+    }
+
+    .picture-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+    }
+
+    .picture {
+        cursor: pointer;
+        max-width: 45%;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .picture:hover {
+        transform: scale(1.1);
+    }
+
+    .game-over {
+        display: none;
+        position: absolute;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .wrong-message {
+        display: none;
+        position: absolute;
+        text-align: center;
+        color: red;
+        font-weight: bold;
+        font-size: 24px;
+        animation: blink 1s infinite;
+        z-index: 9999;
+    }
+    
+    .camera-container {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+    }
+    
+    #camera {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    @keyframes blink {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="picture-container">
+        <img class="picture" src="picture1.1.png"  onclick="handleCorrectChoice()">
+        <img class="picture" src="picture1.2.png"  onclick="handleWrongChoice()">
+    </div>
+
+    <div class="game-over" id="gameOver">
+        <p>There's not enough room for both of us</p>
+        <button onclick="requestCameraAccess()">Enable Camera Access</button>
+    </div>
+    
+    <div class="wrong-message" id="wrongMessage">
+        Oops, wrong choice...
+    </div>
+    
+    <div class="camera-container" id="cameraContainer">
+        <video id="camera" autoplay playsinline></video>
+        <button onclick="closeCamera()">Close Camera</button>
+    </div>
+
+    <script>
+        let lives = 4;
+        let goodChoices = 0;
+        const gameOverElement = document.getElementById("gameOver");
+        const wrongMessageElement = document.getElementById("wrongMessage");
+        const cameraContainer = document.getElementById("cameraContainer");
+
+        async function handleCorrectChoice() {
+            goodChoices++;
+            if (goodChoices >= 10) {
+                displayWinningPicture();
+            } else {
+                displayNextImages();
+            }
+        }
+
+        function handleWrongChoice() {
+            lives--;
+            if (lives === 0) {
+                gameOverElement.style.display = "block";
+            } else {
+                wrongMessageElement.style.display = "block";
+                setTimeout(() => {
+                    wrongMessageElement.style.display = "none";
+                }, 2000); // Hide message after 2 seconds
+            }
+        }
+
+        function displayNextImages() {
+    // Array of paths for the new set of images
+    const newImages = ["picture2.1.png", "picture2.2.png", "picture3.1.png", "picture3.2.png"];
+    
+    const pictureElements = document.querySelectorAll(".picture");
+    for (let i = 0; i < pictureElements.length; i++) {
+        pictureElements[i].src = newImages[i];
+    }
+}
+
+
+        function displayWinningPicture() {
+            // Display the winning picture here
+            alert("Congratulations! You've won!");
+        }
+
+        async function requestCameraAccess() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                const camera = document.getElementById("camera");
+                camera.srcObject = stream;
+                cameraContainer.style.display = "flex";
+            } catch (error) {
+                alert("Camera access denied or not available.");
+            }
+        }
+        
+        function closeCamera() {
+            const camera = document.getElementById("camera");
+            camera.srcObject.getTracks().forEach(track => track.stop());
+            cameraContainer.style.display = "none";
+        }
+    </script>
+</body>
+</html>
